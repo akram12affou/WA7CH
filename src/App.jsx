@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import Header from "./Components/Layout/Header";
-import ProductCarousel from "./Components/ProductsCarousel";
+import Home from "./Components/pages/Home";
 import { Routes, Route } from "react-router-dom";
 function App() {
-  // https://fakestoreapi.com/products
+  
   const dispatch = useDispatch();
   return (
     <div>
       <Header />
       <Routes>
         {" "}
-        <Route path="/" element={<ProductCarousel />}></Route>
+        <Route path="/" element={<Home />}></Route>
       </Routes>
     </div>
   );

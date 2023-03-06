@@ -7,7 +7,6 @@ import { fetchFirstThreeProductsData } from "../redux/actions";
 import axios from "axios";
 function ProductsCarousel() {
   const firstTreeProducts = useSelector((state) => state.firstTreeProducts);
-  console.log(firstTreeProducts);
   const dispatch = useDispatch();
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((res) => {
@@ -16,49 +15,31 @@ function ProductsCarousel() {
   }, []);
   return (
     <div className="carousel-container">
-    <div className="carousel">
-      <Carousel variant="dark">
-        {firstTreeProducts.map((product) => {
-          return (
-            <Carousel.Item>
-             
-                
-                  
-                
-               
-             
+      <div className="carousel">
+        <Carousel variant="dark">
+          {firstTreeProducts.map((product) => {
+            return (
+              <Carousel.Item>
                 <div className="carousel-insight">
-                <div className="description">
-                  <h2>{product.title}</h2>
-                  <span>{product.description}</span>
-                  <br />
-                  <h5>{product.price}$ Only</h5>
-                  <button>Buy Now</button>
+                  <div className="description">
+                    <h2>{product.title}</h2>
+                    <span>{product.description.substring(0, 200)}</span>
+                    <br />
+                    <h5>{product.price} $ Only</h5>
+                    <button>Buy Now</button>
                   </div>
-                <img 
+                  <img
                     className="img"
                     src={product.image}
                     alt="First slide"
                     width="100px"
                   />
-                  
-               </div>
-                  
-                  
-                  
-                  
-               
-              
-
-              {/* <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption> */}
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-    </div>
+                </div>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
+      </div>
     </div>
   );
 }

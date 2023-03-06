@@ -1,5 +1,5 @@
 .carousel{
-    height: 90vh;
+    height: 85vh;
     width: 100vw;
     display: flex;
     margin: 0 auto;
@@ -8,21 +8,31 @@
     align-items: center;
     .img{
         // height: 50vh; 
-        width: calc(100px + 20vw);
+        width: calc(65px + 25vw);
         height:auto;
         object-fit: contain;
     }
     .description{
+        // width: 60vw;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         button{
-            background: #25beac;
+            background: #15b7b9;
             color: white;
             border: none;
-            padding: 8px 30px;
+            font-size: calc(0.9rem + 0.5vw);
+            padding: 0.4em 1.3em; 
+            font-weight: bold;
             
+        }
+        span{
+            font-size: calc(0.8rem + 0.2vw);
+        }
+        h5{
+            font-weight: bolder;
+            font-size: calc(0.7rem + 0.5vw);;
         }
         h2{
             font-size: calc(1rem + 1vw);;
@@ -30,10 +40,21 @@
     }
     .carousel-insight{
         width: 60vw;
-        margin-left: 20vw;
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+       
         gap: 5vw;
     }
+    @media only screen and (max-width: 768px) {
+        .carousel-insight{
+            width: 80vw;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+           
+            gap: 5vw;
+        }
+      }
 }
 
