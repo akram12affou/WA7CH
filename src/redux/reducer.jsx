@@ -1,12 +1,13 @@
-const initialState = {}
+
+const initialState = {
+  firstTreeProducts : []
+}
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
 
-  case 'first':
-    console.log('hey')
-    return { ...state }
-
+  case 'FetchFirstThreeProductsData':
+    return { ...state,firstTreeProducts: payload}
   default:
     return state
   }

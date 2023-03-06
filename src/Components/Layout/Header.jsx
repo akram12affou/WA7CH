@@ -1,30 +1,44 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
 import "../../styles/Header.scss";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
+
 function Header() {
+  const [isOpen , setIsOpen] = useState(false)
   return (
     <div className="navbar">
-      <div class="navbar_brand">
+      <div className="navbar_brand">
         <h2>E-CART</h2>
       </div>
-      <div class="navbar_routes">
+      <div className="navbar_routes">
         <HomeTwoToneIcon />
-        <div class="shopping-icon">
+        <div className="shopping-icon">
           <ShoppingCartTwoToneIcon />
           <span>0</span>
         </div>
-        <button>Login</button>
+        <button>Log in</button>
       </div>
-      <div className="humburger_menu">
-      {/* <HomeTwoToneIcon />
-        <div class="shopping-icon">
+      <div className="humburger_container" onClick={() => setIsOpen(true)}>
+      <div className="humburger" >
+      
+      </div>
+      </div>
+      <div className="humburger_menu_container"
+       style={{transform : isOpen && 'translateX(0%)'}}>
+        <div className="close-button" onClick={() => setIsOpen(false)}>
+      <CloseTwoToneIcon/>
+      </div>
+      <div className='humburger_menu'>
+      <HomeTwoToneIcon />
+        <div className="shopping-icon">
           <ShoppingCartTwoToneIcon />
           <span>0</span>
         </div>
-        <button>Login</button> */}
-      </div>
+        <button>Log in</button>
+        </div>
+        </div>
+        
     </div>
   );
 }

@@ -1,8 +1,8 @@
-export const fetchProductsData = () => {
+export const fetchFirstThreeProductsData = (res) => {
     return(
         {
-            type : 'FetchProductsData',
-            payload:'https://fakestoreapi.com/products'
+            type : 'FetchFirstThreeProductsData',
+            payload:res
         }
     )
 }

@@ -4,7 +4,11 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+body{
+  overflow-x: hidden;
+}
 .navbar {
+  
   background: #fefefe;
   height: 50px;
   display: flex;
@@ -52,36 +56,109 @@
       position: relative;
     }
   }
-  .humburger_menu {
-    display: none;
+  .humburger {
+    
+    &_container{
+      display: none;
+      padding: 15px 0px;
+      cursor: pointer;
+    }
+    
+    &_menu{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 90%;
+      height: 20%;
+      align-items: flex-start;
+    
+    }
+    &_menu_container{
+      z-index: 100;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(100%);
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+    position:absolute;
+    right:0;
+    top: 0;
+    width:40vw ;
+    height: 100vh;
+    background: #fefefe;
+    color:#25beac;
+    button {
+      background: #25beac;
+      color: white;
+      border: none;
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+    .close-button{
+      color:black;
+      padding: 15px;
+      cursor: pointer;
+   }
+    .shopping-icon {
+      display: flex;
+      position: relative;
+    }
+    span {
+      position: absolute;
+      color: white;
+      bottom: 12px;
+      left: 16px;
+      background: #ff0000;
+      border-radius: 50%;
+      font-size: 10px;
+      padding: 2px 7px;
+      font-weight: 900;
+    }
+    }
+   
   }
   @media only screen and (max-width: 768px) {
-    .humburger_menu {
+    .humburger_menu_container{
+      display: flex;
+
+    }
+
+    .humburger {
+      &_container{
+        display: flex;
+      }
       position: relative;
       display: flex;
-      background: #6b35e9;
+      border-radius: 2px;
+      background: #25beac;
+      margin-right: calc(12px + 8vw);
       width: 30px;
-      height: 6px;
+      height: 5px;
       &::before {
         content: " ";
         top: -10px;
-        
+        border-radius: 2px;
         position: absolute;
-        background: #db1515;
+        background: #25beac;
         width: 30px;
-        height: 6px;
+        height: 5px;
       }
       &::after {
         content: " ";
         top: 10px;
+        border-radius: 2px;
         position: absolute;
-        background: #46cd2e;
+        background: #25beac;
         width: 30px;
-        height: 6px;
+        height: 5px;
       }
     }
     .navbar_routes {
       display: none;
+    }
+    .navbar_brand{
+      padding-left: calc(12px + 8vw);
+      line-height: 0px;
     }
   }
 }
