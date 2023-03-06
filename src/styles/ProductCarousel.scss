@@ -9,6 +9,7 @@
     .img{
         // height: 50vh; 
         width: calc(65px + 25vw);
+        max-width: 400px;
         height:auto;
         object-fit: contain;
     }

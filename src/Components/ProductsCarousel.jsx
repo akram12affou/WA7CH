@@ -5,6 +5,7 @@ import "../styles/ProductCarousel.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFirstThreeProductsData } from "../redux/actions";
 import axios from "axios";
+import LoadingSpinner from "./Layout/LoadingSpinner";
 function ProductsCarousel() {
   const firstTreeProducts = useSelector((state) => state.firstTreeProducts);
   const dispatch = useDispatch();
@@ -14,7 +15,10 @@ function ProductsCarousel() {
     });
   }, []);
   return (
-    <div className="carousel-container">
+   firstTreeProducts.length == 0 ? <LoadingSpinner/> 
+   :
+
+    (<div className="carousel-container">
       <div className="carousel">
         <Carousel variant="dark">
           {firstTreeProducts.map((product) => {
@@ -40,7 +44,7 @@ function ProductsCarousel() {
           })}
         </Carousel>
       </div>
-    </div>
+    </div>)
   );
 }
 

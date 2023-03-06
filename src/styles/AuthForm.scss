@@ -1,0 +1,40 @@
+.login{
+    padding: 25px;
+    box-shadow: 0 0 10px rgb(162, 162, 162);
+  width:70vw;
+  height: 60vh;
+  max-width: 700px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   margin: 0 auto;
+   
+   margin-top: 10vh;
+   input{
+    
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(158, 158, 158);
+   }
+   div span{
+    color: #15b7b9;
+    font-weight: bolder;
+      letter-spacing: 1px;
+      cursor: pointer;
+   }
+   div{
+    margin-top: 20px;
+   }
+   button{
+    margin-top: 20px;
+    background: #15b7b9;
+      color: white;
+      border: none;
+      padding: 5px 20px;
+      border-radius: 5px;
+      font-weight: bolder;
+      letter-spacing: 2px;
+      border: 1px solid rgb(82, 82, 255);
+   }
+}
