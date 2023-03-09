@@ -6,3 +6,11 @@ export const fetchFirstThreeProductsData = (res) => {
         }
     )
 }
+export const fetchOtherProducts = (res) => {
+    return(
+        {
+            type : 'FetchOtherProducts',
+            payload:res
+        }
+    )
+}

@@ -1,0 +1,24 @@
+h3{
+    font-size: calc(1rem + 0.6vw);
+    font-style: normal;
+    font-weight: 700;
+    color: #3a316e;
+    letter-spacing: 2px;
+    &::after{
+        content: "";
+        margin-top: 10px;
+        display: block;
+        width: 80px;
+        height: 10px;
+        background: #11d3bc;
+    }
+}
+.products{
+    margin-left: 5vw;
+    .brand-new-container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap:10px;
+    }
+}

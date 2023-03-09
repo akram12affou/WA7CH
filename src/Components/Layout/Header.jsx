@@ -3,24 +3,23 @@ import "../../styles/Header.scss";
 import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
-
+import { Link } from "react-router-dom";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="navbar">
       <div className="navbar_brand">
-        <h2>E-CART</h2>
+      <Link to='/'><h2>E-CART</h2></Link>
       </div>
       <div className="navbar_routes">
         <div>
-          <HomeTwoToneIcon />
+        <Link to='/'> <HomeTwoToneIcon /></Link>
         </div>
-
         <div className="shopping-icon">
           <ShoppingCartTwoToneIcon />
           <span>0</span>
         </div>
-        <button>Log in</button>
+        <Link to='/authForm'><button>Log in</button></Link>
       </div>
       <div className="humburger_container" onClick={() => setIsOpen(true)}>
         <div className="humburger"></div>
@@ -33,12 +32,12 @@ function Header() {
           <CloseTwoToneIcon />
         </div>
         <div className="humburger_menu">
-          <HomeTwoToneIcon />
+        <Link to='/'> <HomeTwoToneIcon /> </Link>
           <div className="shopping-icon">
             <ShoppingCartTwoToneIcon />
             <span>0</span>
           </div>
-          <button>Log in</button>
+         <Link to='/authForm'> <button>Log in</button></Link>
         </div>
       </div>
     </div>
