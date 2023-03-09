@@ -10,7 +10,7 @@ function ProductCart({product}) {
         <img src={image} alt="" />
     </div>
     <div className='mini-description'>
-        <p>{title.substring(0,10)}...</p>
+        <p>{title.substring(0,30)}...</p>
         <p className='rate'>{rating.rate} <StarIcon/></p>
         <div className="price-info"><p className='price' >{price}$</p>&nbsp; <span class='old-price'>{+price + 500}$</span></div>
     </div>
