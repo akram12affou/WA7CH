@@ -2,7 +2,6 @@ import React from 'react'
 import  '../../styles/ProductCart.scss'
 import StarIcon from '@mui/icons-material/Star';
 function ProductCart({product}) {
-    console.log(product)
      const {id,title,price,image,rating} = product
   return (
     <div key={id} className='product-cart-container'>

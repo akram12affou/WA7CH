@@ -2,7 +2,7 @@
     padding: 25px;
     box-shadow: 0 0 10px rgb(181, 181, 181);
   
-  min-height: 60vh;
+  
   width: 60vw;
   max-width: 600px;
   min-width: 300px;
@@ -28,6 +28,10 @@
     margin-top: 20px;
    }
    button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
     margin-top: 20px;
     background: #15b7b9;
       color: white;

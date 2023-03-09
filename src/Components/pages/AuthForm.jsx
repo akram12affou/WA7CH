@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import LoadingSpinnerAuth from '../Layout/LoadingSpinnerAuth'
 import "../../styles/AuthForm.scss";
 function AuthForm() {
   const [name, setName] = useState("");
@@ -39,21 +40,26 @@ function AuthForm() {
     <div className="login">
       {login ? (
         <>
-          EMAIL :
+       <br />
+        EMAIL :
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="exemple@gmail.com"
           />
+          <br />
+         
           PASSWORD :
+          
           <input
             type="text"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="your password"
           />
-          <button onClick={handleLogIn}>Login</button>
+          <br />
+          <button onClick={handleLogIn}> <LoadingSpinnerAuth/> Login</button>
           <div>
             Don't have an account?{" "}
             <span
@@ -69,6 +75,7 @@ function AuthForm() {
         </>
       ) : (
         <>
+        <br />
           NAME :
           <input
             type="text"
@@ -76,6 +83,7 @@ function AuthForm() {
             onChange={(e) => setName(e.target.value)}
             placeholder="your name"
           />
+          <br />
           EMAIL :
           <input
             type="text"
@@ -83,6 +91,7 @@ function AuthForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="exemple@gmail.com"
           />
+          <br />
           PASSWORD :
           <input
             type="text"
@@ -90,7 +99,8 @@ function AuthForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="your password"
           />
-          <button onClick={handleLogIn}>Signup</button>
+          <br />
+          <button onClick={handleLogIn}><LoadingSpinnerAuth/> Signup</button>
           <div>
             Already have an account?{" "}
             <span

@@ -8,7 +8,9 @@ body{
   overflow-x: hidden;
 }
 .navbar {
-
+  .home-icon{
+    cursor: pointer;
+  }
 
   background: #fefefe;
   height: 70px;
@@ -17,10 +19,11 @@ body{
   justify-content: space-between;
   &_brand {
     padding: 0px 100px;
-   
-    letter-spacing: 1px;
+    
+    letter-spacing: 2px;
     
     h2 {
+      cursor: pointer;
       margin-bottom: 0rem;
       font-size: 1.2rem;
       font-weight: bolder;
@@ -55,12 +58,13 @@ body{
       font-weight: 900;
     }
     .shopping-icon {
+      cursor:pointer;
       display: flex;
       position: relative;
     }
   }
   .humburger {
-    
+   
     &_container{
       display: none;
       padding: 15px 0px;
@@ -118,7 +122,7 @@ body{
       font-weight: 900;
     }
     }
-   
+
   }
   @media only screen and (max-width: 768px) {
     .humburger_menu_container{

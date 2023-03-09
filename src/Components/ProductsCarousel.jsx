@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/ProductCarousel.scss";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFirstThreeProductsData } from "../redux/actions";
 import axios from "axios";
@@ -30,7 +31,7 @@ function ProductsCarousel() {
                     <span>{product.description.substring(0, 200)}</span>
                     <br />
                     <h5>{product.price} $ Only</h5>
-                    <button>Buy Now</button>
+                    <Link  to={`/productdetails/${product.id}`}><button>Buy Now</button></Link>
                   </div>
                   <img
                     className="img"

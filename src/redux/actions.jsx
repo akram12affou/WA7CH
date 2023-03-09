@@ -14,3 +14,11 @@ export const fetchOtherProducts = (res) => {
         }
     )
 }
+export const fetchProductDetails = (res) => {
+    return(
+        {
+            type : 'FetchProductDetails',
+            payload:res
+        }
+    )
+}

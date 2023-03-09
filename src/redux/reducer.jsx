@@ -1,7 +1,8 @@
 
 const initialState = {
   firstTreeProducts : [],
-  OtherProducts : []
+  OtherProducts : [],
+  PDetails : []
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -11,6 +12,10 @@ export default (state = initialState, { type, payload }) => {
     return { ...state,firstTreeProducts: payload}
   case 'FetchOtherProducts':
     return { ...state,OtherProducts: payload}
+  case 'FetchProductDetails':
+ 
+    return { ...state,PDetails: [payload]}
+    
   default:
     return state
   }

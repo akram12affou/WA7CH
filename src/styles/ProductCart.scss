@@ -3,8 +3,8 @@
  display: flex;
   flex-direction: column;    
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 29%;
-  height: 400px;
+  width:29vw;
+height: 400px;
   position: relative;
   padding: 8px;
   transition: all 0.2s ease;
@@ -54,8 +54,10 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    background: #000;
-    transition: all 0.2s ease;
+    background: #15b7b9;
+
+    transition: all 0.2s ease-in-out;
+    
 }
  &:hover{
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
@@ -81,7 +83,7 @@ width:40vw;
 height: 400px;
 }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 460px) {
     .product-cart-container{
 
 
