@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import auth from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 import {
   createUserWithEmailAndPassword,
   updateProfile,
@@ -14,6 +15,9 @@ function AuthForm() {
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
   const [authload , setAuthload] = useState(false);
+  const [message , setMessage] = useState('')
+  const [show, setShow] = useState(true);
+
   const navigate = useNavigate()
   const handleLogIn = async () => {
     setAuthload(true)
@@ -27,7 +31,8 @@ function AuthForm() {
         setAuthload(false)
         navigate("/");
       } catch (err) {
-        console.log(err);
+        setMessage(err.message);
+        
         setAuthload(false)
       }
     } else {
@@ -42,15 +47,28 @@ function AuthForm() {
         navigate("/");
         setAuthload(false)
       } catch (err) {
-        console.log(err);
+        setMessage(err.message)
         setAuthload(false)
-        
       }
     }
     
   };
+  useEffect(() => {
+    setShow(true)
+  },[])
   return (
+    <>  
+    <center>  
+     <center style={{width : '50vw'}}>
+    <Alert variant="danger">
+    <p>
+      {message}
+    </p>
+  </Alert>
+  </center></center>
+ 
     <div className="login">
+      
       {login ? (
         <>
        <br />
@@ -130,6 +148,7 @@ function AuthForm() {
         </>
       )}
     </div>
+    </>
   );
 }
 

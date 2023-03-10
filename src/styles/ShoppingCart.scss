@@ -2,15 +2,27 @@
     
     display: grid;
     width: 90vw;
-    margin: 5vh auto;
+    margin: 3vh auto;
     padding: 10px;
-   
-    grid-template-columns: 5%  60% 5% 30%;
+    gap: 10px;
+    grid-template-columns:  5% 62.5%  32.5%;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .hr{
+        background-color:#11d3bc;
+        height: 3px;
+        border-radius: 15px;
+        width: 90%;
+        margin: 0 auto;
+        
+    }
     div .my-cart-title,
     .price-Details-title{
         text-transform: uppercase;
         transform: scale(1,0.95);
-        font-size: calc(1rem + 0.6vw);
+        font-size: calc(0.8rem + 0.6vw);
         font-weight: 800;
         color: #3a316e;
         letter-spacing: 2px;
@@ -24,4 +36,84 @@
             border-radius: 3px;
         }
     }
+    .details-info-price{
+        display: flex;
+        gap: 35px;
+    }
+    .details-info-price div{
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        
+        flex-direction: column;
+        gap: 15px;
+    }
+    .details-info-price div span{
+        opacity: 0.9;
+        font-size: 0.8rem;
+        font-weight: bolder;
+        transform: scale(1,0.95);
+    }
+    .total-amount-container{
+        display: flex;
+        margin: 8px auto;
+        opacity: 0.9;
+        gap: 15px;
+        font-size: 0.8rem;
+        font-weight: bolder;
+        transform: scale(1,0.95);
+    }
+    .save-quote{
+       
+        opacity: 0.8;
+        font-size: 0.8rem;
+        font-weight: bolder;
+        transform: scale(1,0.95);
+    }
+    .place-order-button{
+        margin: 8px auto;
+        background: #15b7b9;
+      color: white;
+      border: none;
+      width: 100%;
+      opacity: 0.6;
+      padding: 5px 20px;
+      border-radius: 5px;
+      font-weight: bolder;
+      transform: scale(1,0.95);
+      letter-spacing: 1px;
+      border:1px solid rgb(105, 105, 251);
+    }
+    .place-order-button-con{
+        margin: 8px auto;
+        background: #15b7b9;
+      color: white;
+      border: none;
+      width: 100%;
+      border:1px solid rgb(105, 105, 251);
+      padding: 5px 20px;
+      border-radius: 5px;
+      font-weight: bolder;
+      transform: scale(1,0.95);
+      letter-spacing: 1px;
+    }
+    .info{
+        opacity: 0.8;
+        font-size: 0.8rem;
+        font-weight: bolder;
+        transform: scale(1,0.95);
+        color:red;
+        cursor: pointer;
+    }
+    .price-details{
+        
+        width: fit-content;
+        height: fit-content;
+        padding: 15px;
+        box-shadow: rgba(59, 78, 87, 0.464) 0px 1px 3px 0px;
+    }
+    @media only screen and (max-width: 650px) {
+        grid-template-columns:  0% 60%  60%;
+        grid-template-rows: 1fr 1fr;
+      }
 }

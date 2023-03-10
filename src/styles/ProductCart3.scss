@@ -5,14 +5,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
-    box-shadow: rgba(59, 78, 87, 0.349) 0px 1px 3px 0px;
+    box-shadow: rgba(59, 78, 87, 0.464) 0px 1px 3px 0px;
   div .remove{
     background: #c60d65;
     color:white;
     border:none;
     transform: scale(1, 0.9);
     padding:5px 10px;
-    font-size: calc(0.5rem + 0.6vw);
+    font-size: calc(0.3rem + 0.6vw);
     font-weight: bolder;
     letter-spacing: 1px;
   }
@@ -38,7 +38,7 @@
       
     }
     .descritpion{
-      margin-right:5%;
+      margin-right:10vw;
       
     }
     .quantity-contoller{

@@ -54,3 +54,11 @@ export const minusq = (item) => {
         }
     )
 }
+export const removeAll = (item) => {
+    return(
+        {
+            type : 'RemoveAll',
+            payload:item
+        }
+    )
+}

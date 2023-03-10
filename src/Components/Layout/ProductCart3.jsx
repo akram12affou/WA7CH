@@ -11,8 +11,8 @@ function ProductCart3({ item }) {
     dispatch(removeFromCart(item));
   };
   const minusQuantity = (item,id) => {
-    if(item.q == 0){
-      console.log('remove')
+    if(item.q == 1){
+      dispatch(removeFromCart(item))
     }
      dispatch(minusq(item,id))
   };

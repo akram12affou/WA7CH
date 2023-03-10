@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/authForm" element={<AuthForm />}></Route>
         <Route path="/productdetails/:id" element={<ProductDetails />}></Route>
-        <Route path="/shoppingCart" element={<ShoppingCart />}></Route>
+        <Route path="/shoppingCart" element={<ShoppingCart user={user} />}></Route>
       </Routes>
     </div>
   );
