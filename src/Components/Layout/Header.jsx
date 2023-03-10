@@ -4,8 +4,11 @@ import HomeTwoToneIcon from "@mui/icons-material/HomeTwoTone";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-function Header() {
+import {signOut } from 'firebase/auth'
+import auth from "../../firebase/firebase";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+function Header({user}) {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const toTheHome = () => {
     navigate("/");
@@ -13,7 +16,13 @@ function Header() {
   const toThForm = () => {
     navigate("/authForm");
   };
-  const [isOpen, setIsOpen] = useState(false);
+  const toThShoppingCart = () => {
+    navigate("/shoppingCart");
+  };
+  const logOut = async () => {
+     await signOut(auth);
+     navigate("/");
+   };
   return (
     <div className="navbar">
       <div className="navbar_brand" onClick={toTheHome}>
@@ -23,13 +32,20 @@ function Header() {
         <div  className="home-icon" onClick={toTheHome}>
           <HomeTwoToneIcon />
         </div>
-        <div className="shopping-icon">
+        <div className="shopping-icon" onClick={toThShoppingCart}>
           <ShoppingCartTwoToneIcon />
           <span>0</span>
+          
         </div>
+        &nbsp;
         <div>
-          {" "}
-          <button onClick={toThForm}>Log in</button>
+          
+          {user==null ? <button onClick={toThForm}>Log in</button> :
+            <div className="logout-name">
+                <div style={{'color' : 'black'}}> <><AccountCircleIcon/> {user?.displayName}</> </div>
+                &nbsp; <button onClick={logOut}>Sign out</button>
+            </div>
+             }
         </div>
       </div>
       <div className="humburger_container" onClick={() => setIsOpen(true)}>
@@ -45,13 +61,18 @@ function Header() {
         <div className="humburger_menu" >
           <div className="home-icon" onClick={toTheHome}><HomeTwoToneIcon /></div>
           
-          <div className="shopping-icon">
+          <div className="shopping-icon" onClick={toThShoppingCart}>
             <ShoppingCartTwoToneIcon />
             <span>0</span>
           </div>
          
            
-            <button onClick={toThForm}>Log in</button>
+            {user==null ? <button onClick={toThForm}>Log in</button> :
+            <div>
+              <p style={{'color' : 'black'}}><AccountCircleIcon/> {user?.displayName}</p> 
+                <button onClick={logOut}>Sign out</button>
+            </div>
+             }
         
         </div>
       </div>

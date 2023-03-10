@@ -79,25 +79,26 @@ height: 400px;
     .product-cart-container{
 
 
-width:40vw;
+width:42vw;
 height: 400px;
 }
 }
 @media only screen and (max-width: 460px) {
     .product-cart-container{
-
-
-width:40vw;
-height: 550px;
-.img-container{
-    display: flex;
-    justify-content: center;
-    height: 80%;
-    img{
-        width: 60%;
-        object-fit: contain;
-    }
-  }
+        height:475px;
+         .mini-description{
+            height: 300px;
+         }
+      
+      .img-container{
+        display: flex;
+        justify-content: center;
+        height: 50%;
+        img{
+            width: 90%;
+            object-fit: contain;
+        }
+      }
 }
 
 }

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import auth from "../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 import {
-  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import LoadingSpinnerAuth from '../Layout/LoadingSpinnerAuth'
 import "../../styles/AuthForm.scss";
@@ -11,7 +13,10 @@ function AuthForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [authload , setAuthload] = useState(false);
+  const navigate = useNavigate()
   const handleLogIn = async () => {
+    setAuthload(true)
     if (login) {
       try {
         await signInWithEmailAndPassword(auth, email, password);
@@ -19,8 +24,11 @@ function AuthForm() {
         setPassword("");
         setName("");
         await updateProfile(auth.currentUser).catch((err) => console.log(err));
+        setAuthload(false)
+        navigate("/");
       } catch (err) {
         console.log(err);
+        setAuthload(false)
       }
     } else {
       try {
@@ -31,10 +39,15 @@ function AuthForm() {
         await updateProfile(auth.currentUser, { displayName: name }).catch(
           (err) => console.log(err)
         );
+        navigate("/");
+        setAuthload(false)
       } catch (err) {
         console.log(err);
+        setAuthload(false)
+        
       }
     }
+    
   };
   return (
     <div className="login">
@@ -59,7 +72,7 @@ function AuthForm() {
             placeholder="your password"
           />
           <br />
-          <button onClick={handleLogIn}> <LoadingSpinnerAuth/> Login</button>
+          <button onClick={handleLogIn}>{authload && <LoadingSpinnerAuth/> }Login</button>
           <div>
             Don't have an account?{" "}
             <span
@@ -100,7 +113,7 @@ function AuthForm() {
             placeholder="your password"
           />
           <br />
-          <button onClick={handleLogIn}><LoadingSpinnerAuth/> Signup</button>
+          <button onClick={handleLogIn}>{authload && <LoadingSpinnerAuth/> }Signup</button>
           <div>
             Already have an account?{" "}
             <span

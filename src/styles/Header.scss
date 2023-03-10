@@ -8,6 +8,13 @@ body{
   overflow-x: hidden;
 }
 .navbar {
+  .logout-name{
+    display: flex;
+    align-items: center;
+  }
+  .shopping-icon{
+    cursor: pointer;
+  }
   .home-icon{
     cursor: pointer;
   }
@@ -122,12 +129,12 @@ body{
       font-weight: 900;
     }
     }
-
+   
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 850px) {
     .humburger_menu_container{
       display: flex;
-
+     
     }
 
     .humburger {
@@ -165,7 +172,6 @@ body{
     }
     .navbar_brand{
       padding-left: calc(12px + 8vw);
-  
     }
   }
 }

@@ -22,3 +22,19 @@ export const fetchProductDetails = (res) => {
         }
     )
 }
+export const addToCart = (item) => {
+    return(
+        {
+            type : 'AddToCart',
+            payload:item
+        }
+    )
+}
+export const removeFromCart = (item) => {
+    return(
+        {
+            type : 'RemoveFromCart',
+            payload:item
+        }
+    )
+}
