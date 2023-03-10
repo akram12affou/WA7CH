@@ -5,9 +5,12 @@ import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import { useNavigate } from "react-router-dom";
 import {signOut } from 'firebase/auth'
+import { useSelector } from "react-redux";
 import auth from "../../firebase/firebase";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 function Header({user}) {
+  const CartItems = useSelector((state) => state.CartItems);
+
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const toTheHome = () => {
@@ -34,7 +37,7 @@ function Header({user}) {
         </div>
         <div className="shopping-icon" onClick={toThShoppingCart}>
           <ShoppingCartTwoToneIcon />
-          <span>0</span>
+          <span>{CartItems.length}</span>
           
         </div>
         &nbsp;
@@ -63,7 +66,7 @@ function Header({user}) {
           
           <div className="shopping-icon" onClick={toThShoppingCart}>
             <ShoppingCartTwoToneIcon />
-            <span>0</span>
+            <span>{CartItems.length}</span>
           </div>
          
            

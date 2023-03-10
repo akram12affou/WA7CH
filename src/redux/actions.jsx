@@ -38,3 +38,19 @@ export const removeFromCart = (item) => {
         }
     )
 }
+export const addq = (item) => {
+    return(
+        {
+            type : 'addQ',
+            payload:item
+        }
+    )
+}
+export const minusq = (item) => {
+    return(
+        {
+            type : 'minusQ',
+            payload:item
+        }
+    )
+}
