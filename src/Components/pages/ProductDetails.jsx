@@ -33,7 +33,6 @@ function ProductDetails() {
     }
     dispatch(removeFromCart(item));
   };
-console.log(CartItems);
   return (
     <Fragment>
       {loading ? (

@@ -26,7 +26,7 @@ function ShoppingCart({user}) {
   },[products])
   return (
     <>
-    <center>{products.length == 0 && <>you cart is empty</>}</center>
+    <center>{products.length == 0 && <>your cart is empty</>}</center>
     <div className='shoppingCart-container'>
       <div></div>
       <div className='cart'>

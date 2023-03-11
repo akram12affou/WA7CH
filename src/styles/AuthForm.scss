@@ -2,7 +2,7 @@
     padding: 25px;
     box-shadow: 0 0 10px rgb(181, 181, 181);
   
-  
+
   width: 60vw;
   max-width: 600px;
   min-width: 300px;
@@ -11,7 +11,7 @@
   justify-content: space-between;
    margin: 0 auto;
    
-   margin-top: 5vh;
+ 
    input{
     
     padding: 10px;
@@ -52,4 +52,15 @@
      opacity: .6;
      font-family: 'Courier New', Courier, monospace;
    }
+ 
 }
+.alert div p{
+  color:red;
+  border-radius: 5%;
+  margin: 0 auto;
+  }
+  .alert{
+    display: flex;
+   justify-content: center;
+  
+  }
