@@ -14,6 +14,7 @@ function Products() {
   const navigate = useNavigate();
   const navig = (id) => {
     navigate(`/productdetails/${id}`);
+    window.scrollTo(0,0)
   };
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((res) => {
